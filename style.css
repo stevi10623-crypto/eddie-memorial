@@ -27,6 +27,46 @@ body {
     overflow-x: hidden;
 }
 
+/* Floating Background Icons */
+.floating-icons {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.floater {
+    position: absolute;
+    bottom: -10%;
+    left: var(--x-start, 50%);
+    font-size: var(--size, 2rem);
+    opacity: 0;
+    animation: floatUp var(--duration, 20s) var(--delay, 0s) infinite ease-in-out;
+    filter: grayscale(0.3);
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 0;
+    }
+    5% {
+        opacity: 0.15;
+    }
+    50% {
+        opacity: 0.12;
+        transform: translateY(-50vh) rotate(180deg) scale(1.1);
+    }
+    95% {
+        opacity: 0.08;
+    }
+    100% {
+        transform: translateY(-120vh) rotate(360deg) scale(0.8);
+        opacity: 0;
+    }
+}
+
 /* Typography */
 .gold-text { color: var(--gold); }
 .title-serif { font-family: var(--serif); font-size: 4rem; font-weight: 700; margin-bottom: 2rem; }

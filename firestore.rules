@@ -1,0 +1,36 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Tributes (Guest Book) - public read, anyone can create with name + message
+    match /tributes/{tributeId} {
+      allow read: if true;
+      allow create: if request.resource.data.name is string 
+                    && request.resource.data.name.size() > 0
+                    && request.resource.data.message is string
+                    && request.resource.data.message.size() > 0;
+      allow update, delete: if false;
+    }
+
+    // Keep existing rules for other collections
+    match /users/{userId}/{document=**} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    match /forumPosts/{forumPostId} {
+      allow get, list: if true;
+      allow create: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow update, delete: if request.auth != null && resource.data.userId == request.auth.uid;
+    }
+
+    match /medications/{medicationId} {
+      allow get, list: if true;
+      allow create, update, delete: if request.auth != null;
+    }
+
+    match /soothingSounds/{soundId} {
+      allow get, list: if true;
+      allow write: if false;
+    }
+  }
+}
