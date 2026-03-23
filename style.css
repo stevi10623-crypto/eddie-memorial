@@ -151,9 +151,9 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 88vh; /* Fixed height to fit screen gracefully */
+    height: 95vh; /* Larger display */
     width: 100%;
-    max-width: 900px;
+    max-width: 1200px; /* Allow more width for larger screens */
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -180,32 +180,32 @@ body {
 
 .hero-badge {
     text-transform: uppercase;
-    letter-spacing: 5px;
-    font-size: 0.8rem;
-    margin-bottom: 2rem;
+    letter-spacing: 4px;
+    font-size: 0.75rem;
+    margin-bottom: 1.5rem;
     color: var(--gold);
     display: inline-block;
-    padding: 0.5rem 1.5rem;
+    padding: 0.4rem 1.2rem;
     border: 1px solid var(--gold);
     border-radius: 50px;
 }
 
 .hero-name {
     font-family: var(--serif);
-    font-size: clamp(3.5rem, 12vw, 8rem);
-    line-height: 0.9;
-    margin-bottom: 2rem;
+    font-size: clamp(2.5rem, 8vw, 5.5rem); /* Scaled down */
+    line-height: 1;
+    margin-bottom: 1.5rem;
 }
 
 .hero-divider {
-    width: 100px;
+    width: 80px;
     height: 2px;
     background: var(--gold);
-    margin: 2rem auto;
+    margin: 1.5rem auto;
 }
 
-.hero-tagline { font-family: var(--bebas); font-size: 2.5rem; letter-spacing: 12px; opacity: 0.8; }
-.hero-subtitle { font-family: var(--serif); font-style: italic; font-size: 1.5rem; color: var(--text-gray); margin-top: 1rem; }
+.hero-tagline { font-family: var(--bebas); font-size: 1.8rem; letter-spacing: 8px; opacity: 0.9; }
+.hero-subtitle { font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: var(--text-gray); margin-top: 0.5rem; }
 
 /* Scroll Hint */
 .scroll-hint {
