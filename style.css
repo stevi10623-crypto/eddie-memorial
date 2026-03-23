@@ -43,7 +43,6 @@ body {
     font-size: var(--size, 2rem);
     opacity: 0;
     animation: floatUp var(--duration, 20s) var(--delay, 0s) infinite ease-in-out;
-    filter: grayscale(0.3);
 }
 
 @keyframes floatUp {
@@ -52,14 +51,14 @@ body {
         opacity: 0;
     }
     5% {
-        opacity: 0.15;
+        opacity: 0.45;
     }
     50% {
-        opacity: 0.12;
+        opacity: 0.35;
         transform: translateY(-50vh) rotate(180deg) scale(1.1);
     }
     95% {
-        opacity: 0.08;
+        opacity: 0.2;
     }
     100% {
         transform: translateY(-120vh) rotate(360deg) scale(0.8);
