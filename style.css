@@ -121,7 +121,7 @@ body {
 
 /* Hero Section */
 .hero {
-    height: 92vh;
+    height: 95vh;
     width: 100%;
     display: flex;
     align-items: center;
@@ -129,7 +129,7 @@ body {
     position: relative;
     text-align: center;
     overflow: hidden;
-    background-color: #0b100b; /* Matches image background trees */
+    background-color: var(--bg-dark);
 }
 
 .parallax-bg {
@@ -139,11 +139,11 @@ body {
     width: 100%;
     height: 100%;
     top: 0;
-    background-size: contain;
-    background-position: center center;
+    background-size: cover;
+    background-position: center 38%;
     background-repeat: no-repeat;
     z-index: -2;
-    filter: brightness(0.5) saturate(1.1);
+    filter: brightness(0.6) saturate(1.1);
 }
 
 .hero-overlay {
