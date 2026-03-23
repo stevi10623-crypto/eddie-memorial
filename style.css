@@ -120,62 +120,41 @@ body {
 @keyframes wave { from { height: 3px; } to { height: 15px; } }
 
 /* Hero Section */
-.hero {
-    height: 100vh;
+.hero-stacked {
     width: 100%;
+    min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    position: relative;
+    justify-content: flex-start;
+    padding-top: 15vh;
     text-align: center;
-    overflow: hidden;
-    background: #000; /* Fallback */
+    background: #000;
 }
 
-.parallax-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 0;
-    filter: blur(30px) brightness(0.2) saturate(0.8);
-    transform: scale(1.1); /* Prevent blurred edges from leaking */
-}
-
-.hero-portrait {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 95vh; /* Larger display */
-    width: 100%;
-    max-width: 1200px; /* Allow more width for larger screens */
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 1;
-    filter: brightness(0.85) contrast(1.05);
-    /* Subtle fade at the bottom to merge with the text */
-    -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
-    mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: radial-gradient(ellipse at center 50%, transparent 30%, #000 100%),
-                linear-gradient(to top, #000 0%, transparent 40%),
-                linear-gradient(to bottom, #000 0%, transparent 15%);
-    z-index: 2;
-}
-
-.hero-center {
+.hero-text-block {
+    max-width: 1000px;
+    padding: 0 2rem;
     position: relative;
     z-index: 10;
+}
+
+.hero-image-block {
+    width: 100%;
+    padding: 4rem 1rem 0;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-portrait-img {
+    width: 100%;
+    height: auto;
+    max-height: 85vh; /* Prevents absolutely massive image scaling on crazy wide screens */
+    object-fit: contain;
+    filter: brightness(0.9) contrast(1.1);
+    -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
 }
 
 .hero-badge {
@@ -208,9 +187,8 @@ body {
 .hero-subtitle { font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: var(--text-gray); margin-top: 0.5rem; }
 
 /* Scroll Hint */
-.scroll-hint {
-    position: absolute;
-    bottom: 3rem;
+.scroll-hint-static {
+    margin-top: 4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
