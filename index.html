@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast Eddie Cota | The Man, The Myth, The Legend</title>
+    <meta name="description" content="A premium tribute to the legendary life of Edward 'Fast Eddie' Cota. Father, Husband, Blues Lover, and LA Icon.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Bebas+Neue&display=swap" rel="stylesheet">
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Audio Player (Floating Playlist) -->
+    <div id="audio-player" class="audio-control">
+        <div class="audio-waves">
+            <span></span><span></span><span></span><span></span>
+        </div>
+        <button id="audio-prev" class="audio-nav" title="Previous Track">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+        </button>
+        <button id="audio-toggle" title="Play Tribute Music">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <button id="audio-next" class="audio-nav" title="Next Track">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+        </button>
+        <span class="audio-track-name" id="track-name">Heaven and Hell — Dio</span>
+        <audio id="bg-audio">
+        </audio>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="parallax-bg hero-bg-img"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-center">
+            <div class="hero-badge">A Life Well Lived</div>
+            <h1 class="hero-name">Edward <span class="gold-text">"Fast Eddie"</span> Cota</h1>
+            <div class="hero-divider"></div>
+            <p class="hero-tagline">1965 &mdash; 2025</p>
+            <p class="hero-subtitle">The Man • The Myth • The Legend</p>
+        </div>
+        <div class="scroll-hint">
+            <div class="mouse"></div>
+            <span>Scroll for the Legend</span>
+        </div>
+    </header>
+
+    <main>
+        <!-- The Soul Section -->
+        <section class="section scroll-fade" id="the-soul">
+            <div class="container">
+                <div class="content-split">
+                    <div class="text-block">
+                        <h2 class="gold-cap">The Soul</h2>
+                        <p class="premium-p">Edward Andre Cota was more than a father, a husband, or a friend—he was a <strong>force of nature.</strong> Born in 1965 and raised in the heart of the San Gabriel Valley, Eddie grew up a proud son of <strong>El Monte, California.</strong> He graduated from El Monte High School with the Class of '83, then went on to study at Rio Hondo College. But his real education came from the streets, the stages, and the people of Los Angeles.</p>
+                        <p class="premium-p">Known to the world as <strong>'Fast Eddie,'</strong> he earned the nickname not just for his quick wit, but for the speed at which he could close a deal, make a friend, or turn a total stranger into family. He spent his career dominating the HVAC/R industry—first at <strong>United Refrigeration</strong> and later at <strong>Allied Refrigeration,</strong> where he was consistently one of the top sales professionals in the region. His clients weren't just customers—they were friends for life.</p>
+                        <p class="premium-p">Eddie was unapologetically himself: hilarious, loud, impossibly stylish, and fiercely loyal to his people. He was a lifelong <strong>LA Dodgers</strong> fanatic who bled blue, a die-hard rock and metal head who worshipped Ozzy, Dio, and Tool. Whether he was front row at the <strong>House of Blues</strong> or holding court at a backyard carne asada, Eddie was always the brightest light in the room.</p>
+                    </div>
+                    <div class="image-frame tilt-card">
+                        <img src="assets/492332740_30202869855978608_2548903732646779325_n.jpg" alt="Eddie at the beach" class="floating-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Family Legacy Section -->
+        <section class="section dark scroll-fade" id="family">
+            <div class="container">
+                <div class="content-split">
+                    <div class="image-frame tilt-card">
+                        <img src="assets/648435042_35264500883148788_6957598774654719540_n.jpg" alt="Eddie and Lydia" class="floating-img">
+                    </div>
+                    <div class="text-block">
+                        <h2 class="gold-cap">The Family Man</h2>
+                        <p class="premium-p">At the center of Eddie's world was his family. His wife <strong>Lydia</strong> was his rock, his partner, and his everything. Together they built a life overflowing with love, laughter, and loyalty. Eddie was the devoted father of three: <strong>Erica, Antoinette, and Eddie Jr.</strong>—each one carrying a piece of his fire, his humor, and his heart.</p>
+                        <p class="premium-p">As a grandfather, Eddie was pure magic. He was the loudest voice in the room at every birthday, the first to volunteer for babysitting duty, and the one who could make any kid laugh no matter what. His grandson <strong>Mateo</strong> held a special place in his heart—Eddie supported him through every challenge with relentless love and an unshakable spirit that inspired everyone around him.</p>
+                    </div>
+                </div>
+                <div class="family-grid">
+                    <div class="family-card glass">
+                        <h3>Devoted Husband</h3>
+                        <p>Eddie and <strong>Lydia</strong> were inseparable—partners in crime, best friends, and soulmates. He never missed a chance to make her laugh or remind her she was the most important person in his world.</p>
+                    </div>
+                    <div class="family-card glass gold-border">
+                        <h3>Proud Father</h3>
+                        <p><strong>Erica, Antoinette, and Eddie Jr.</strong> were his greatest achievements. He raised them with tough love, endless humor, and the kind of loyalty that only a Cota man could deliver.</p>
+                    </div>
+                    <div class="family-card glass">
+                        <h3>The Best Grandpa</h3>
+                        <p>Whether it was making silly faces, sneaking extra treats, or just being present—Eddie made every grandchild feel like the most important person on the planet. <strong>Mateo's</strong> biggest champion, without question.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LA Legend Section -->
+        <section class="section marquee-section" id="la-legend">
+            <div class="marquee-bg">
+                <div class="marquee-text">HOUSE OF BLUES • THE COMEDY STORE • DODGER STADIUM • UNITED REFRIGERATION • ALLIED REFRIGERATION • EL MONTE • VAN HALEN • OZZY • DIO • TOOL • THE SUNSET STRIP • </div>
+            </div>
+            <div class="container relative">
+                <div class="la-grid la-grid-3">
+                    <div class="la-card hover-zoom house-of-blues-bg">
+                        <div class="la-overlay"></div>
+                        <div class="la-content">
+                            <span class="la-tag">Rock & Roll</span>
+                            <h3>House of Blues</h3>
+                            <p>Eddie was a regular at the House of Blues on the Sunset Strip. He lived for the live shows—front row, cold beer in hand, losing himself in the music. From Ozzy to Dio, that stage was his church and every concert was a sermon.</p>
+                        </div>
+                    </div>
+                    <div class="la-card hover-zoom comedy-store-bg">
+                        <div class="la-overlay"></div>
+                        <div class="la-content">
+                            <span class="la-tag">Sunset Strip Legend</span>
+                            <h3>The Comedy Store</h3>
+                            <p>Eddie wasn't just a regular—he was <em>family</em> at the legendary Comedy Store on the Sunset Strip. He knew the doormen, the comics, the bartenders. When he passed, the Store put his name on the marquee—a final standing ovation for the man who always had the best seat in the house and the loudest laugh in the room.</p>
+                        </div>
+                    </div>
+                    <div class="la-card hover-zoom dodgers-bg">
+                        <div class="la-overlay"></div>
+                        <div class="la-content">
+                            <span class="la-tag">Bleed Blue</span>
+                            <h3>Die-Hard Dodger Fan</h3>
+                            <p>Eddie bled Dodger blue from birth. He never missed a game on TV and lit up every time he walked into Dodger Stadium. Win or lose, he repped LA with pride—foam finger and all. The Dodgers weren't just a team to Eddie, they were a way of life.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="section scroll-fade" id="gallery">
+            <div class="container">
+                <h2 class="title-serif center">Life in <span class="gold-text">Focus</span></h2>
+                <div class="bento-gallery">
+                    <!-- Row 1: Big Dodgers shot + Family Portrait + Comedy Store -->
+                    <div class="bento-item item-1 glass"><img src="assets/131888406_5471069839585286_6848030323172214255_n.jpg" alt="Eddie repping the Dodgers at the lake"></div>
+                    <div class="bento-item item-2 glass"><img src="assets/648220017_35276823715249838_2586522648504194949_n.jpg" alt="Eddie with his family"></div>
+                    <div class="bento-item item-3 glass"><img src="assets/466562704_28414993728099572_4479065323473047575_n.jpg" alt="Eddie at the Comedy Store"></div>
+                    <!-- Quote Card -->
+                    <div class="bento-item item-4 glass portrait-area">
+                         <p class="quote">"Go ahead, hit me with your best shot."</p>
+                         <span class="quote-auth">&mdash; Fast Eddie</span>
+                    </div>
+                    <!-- Row 2: Kids + Beach Selfie -->
+                    <div class="bento-item item-5 glass"><img src="assets/655394286_35544700585128815_3760434158033061813_n.jpg" alt="Three kids kissing baby"></div>
+                    <div class="bento-item item-6 glass"><img src="assets/492332740_30202869855978608_2548903732646779325_n.jpg" alt="Eddie beach selfie"></div>
+                    <!-- Row 3: Eddie & Lydia + Cool Rocks Selfie -->
+                    <div class="bento-item item-7 glass"><img src="assets/648435042_35264500883148788_6957598774654719540_n.jpg" alt="Eddie and Lydia - I Love You"></div>
+                    <div class="bento-item item-8 glass"><img src="assets/468646668_10162039589355943_3593014135898701173_n.jpg" alt="Eddie looking cool at the rocks"></div>
+                    <!-- Row 4: Tree Selfie + Cigar Shot + Night Out -->
+                    <div class="bento-item item-9 glass"><img src="assets/493814201_30252689914329935_7134072902833495191_n.jpg" alt="Eddie tree selfie with cap and chain"></div>
+                    <div class="bento-item item-10 glass"><img src="assets/648845698_35306585905606952_9025843792680106737_n.jpg" alt="Eddie smoking a cigar - legendary"></div>
+                    <div class="bento-item item-11 glass"><img src="assets/594567383_32679790678303162_7439750749417331709_n.jpg" alt="Eddie with daughter on a night out"></div>
+                    <!-- Row 5: Guitar + Bath + Wedding Walk -->
+                    <div class="bento-item item-12 glass"><img src="assets/653705271_35483544697911071_5834513184994671950_n.jpg" alt="Eddie playing guitar"></div>
+                    <div class="bento-item item-13 glass"><img src="assets/653416078_35529214053344135_7832184818720480943_n.jpg" alt="Kids in the bath"></div>
+                    <div class="bento-item item-14 glass"><img src="assets/466406157_28397168873215391_1234113525446304753_n.jpg" alt="Eddie walking in his suit"></div>
+                    <!-- Row 6: Suited Up + Dodger Socks Quote -->
+                    <div class="bento-item item-15 glass"><img src="assets/466479214_28422775313988080_2476776123107015562_n.jpg" alt="Eddie suited up for winter"></div>
+                    <div class="bento-item item-16 glass"><img src="assets/466479204_28427643090167969_4006840429058253731_n.jpg" alt="Groomsmen with Dodger socks"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guest Book Section -->
+        <section class="section dark" id="guestbook">
+            <div class="container">
+                <div class="guestbook-header">
+                    <h2 class="title-serif">The <span class="gold-text">Tribute</span> Wall</h2>
+                    <p>Share a memory with the Cota family.</p>
+                </div>
+                
+                <div class="guestbook-container">
+                    <!-- Form -->
+                    <form id="tribute-form" class="glass-form">
+                        <div class="form-row">
+                            <input type="text" id="guest-name" placeholder="Your Name" required>
+                            <input type="text" id="guest-relation" placeholder="Relation (e.g., Friend, Family)">
+                        </div>
+                        <textarea id="guest-message" placeholder="Share a story or message for Fast Eddie..." required></textarea>
+                        <div class="file-input-wrapper">
+                            <label for="guest-photo" class="file-label" id="file-label-text">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 8px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                                Upload a Memory (Image)
+                            </label>
+                            <input type="file" id="guest-photo" accept="image/*" style="display: none;">
+                        </div>
+                        <button type="submit" class="btn-gold">Share with the Family</button>
+                    </form>
+
+                    <!-- Messages -->
+                    <div id="tribute-list" class="tribute-scroll">
+                        <!-- Messages will load here -->
+                        <div class="loading-spinner"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">FAST EDDIE</div>
+            <p>1965 &mdash; 2025</p>
+            <p class="copyright">Ride on, Legendary Man.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox Overlay -->
+    <div id="lightbox" class="lightbox-overlay">
+        <button id="lightbox-close" class="lightbox-close" aria-label="Close">&times;</button>
+        <img id="lightbox-img" src="" alt="Full size photo">
+    </div>
+
+    <!-- Firebase Logic & Animations -->
+    <script>
+        // Firebase Config
+        const firebaseConfig = {
+            projectId: "studio-7483293235-1690b",
+            appId: "1:170768132557:web:3ca90913bb568edad2bc84",
+            storageBucket: "studio-7483293235-1690b.firebasestorage.app",
+            apiKey: "AIzaSyAMUh6MMtnjyzKnrXHJTc6Wja3bPKMZK4M",
+            authDomain: "studio-7483293235-1690b.firebaseapp.com"
+        };
+        
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        const storage = firebase.storage();
+
+        // Playlist Logic
+        const playlist = [
+            { title: 'Heaven and Hell — Dio', src: 'assets/heaven_and_hell.mp3' },
+            { title: 'Mama I\'m Coming Home — Ozzy', src: 'assets/mama_im_coming_home.mp3' },
+            { title: 'Schism — Tool', src: 'assets/schism.mp3' }
+        ];
+        let currentTrack = 0;
+
+        const audio = document.getElementById('bg-audio');
+        const audioToggle = document.getElementById('audio-toggle');
+        const audioControl = document.getElementById('audio-player');
+        const trackName = document.getElementById('track-name');
+        const prevBtn = document.getElementById('audio-prev');
+        const nextBtn = document.getElementById('audio-next');
+
+        const playIcon = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
+        const pauseIcon = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>';
+
+        function loadTrack(index) {
+            currentTrack = index;
+            if (currentTrack < 0) currentTrack = playlist.length - 1;
+            if (currentTrack >= playlist.length) currentTrack = 0;
+            audio.src = playlist[currentTrack].src;
+            trackName.textContent = playlist[currentTrack].title;
+        }
+
+        function playAudio() {
+            audio.play();
+            audioControl.classList.add('playing');
+            audioToggle.innerHTML = pauseIcon;
+        }
+
+        audioToggle.addEventListener('click', () => {
+            if (audio.paused) {
+                if (!audio.src || audio.src === '') loadTrack(0);
+                playAudio();
+            } else {
+                audio.pause();
+                audioControl.classList.remove('playing');
+                audioToggle.innerHTML = playIcon;
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            loadTrack(currentTrack - 1);
+            playAudio();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            loadTrack(currentTrack + 1);
+            playAudio();
+        });
+
+        audio.addEventListener('ended', () => {
+            loadTrack(currentTrack + 1);
+            playAudio();
+        });
+
+        // Pre-load first track
+        loadTrack(0);
+
+        // Guest Book Logic
+        const form = document.getElementById('tribute-form');
+        const list = document.getElementById('tribute-list');
+        const fileInput = document.getElementById('guest-photo');
+        const fileLabel = document.getElementById('file-label-text');
+
+        fileInput.addEventListener('change', () => {
+            if (fileInput.files.length > 0) {
+                fileLabel.innerText = "Photo Selected: " + fileInput.files[0].name;
+                fileLabel.style.borderColor = "#D4AF37";
+            }
+        });
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = form.querySelector('button');
+            const originalText = btn.innerText;
+            btn.disabled = true;
+            btn.innerText = 'Sharing...';
+
+            let photoUrl = null;
+
+            try {
+                // Upload photo if exists
+                if (fileInput.files[0]) {
+                    const file = fileInput.files[0];
+                    const storageRef = storage.ref(`tributes/${Date.now()}_${file.name}`);
+                    const uploadTask = await storageRef.put(file);
+                    photoUrl = await uploadTask.ref.getDownloadURL();
+                }
+
+                await db.collection('tributes').add({
+                    name: document.getElementById('guest-name').value,
+                    relation: document.getElementById('guest-relation').value,
+                    message: document.getElementById('guest-message').value,
+                    photoUrl: photoUrl,
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                });
+                
+                form.reset();
+                fileLabel.innerText = "Upload a Memory (Image)";
+                fileLabel.style.borderColor = "";
+            } catch (err) {
+                console.error(err);
+                alert('Error sharing tribute. Please check your connection.');
+            } finally {
+                btn.disabled = false;
+                btn.innerText = originalText;
+            }
+        });
+
+        db.collection('tributes').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
+            list.innerHTML = '';
+            snapshot.forEach(doc => {
+                const data = doc.data();
+                const card = document.createElement('div');
+                card.className = 'tribute-item glass slide-in';
+                
+                let imageHtml = data.photoUrl ? `<img src="${data.photoUrl}" class="tribute-img" alt="Memory">` : '';
+
+                card.innerHTML = `
+                    ${imageHtml}
+                    <p class="tribute-msg">"${data.message}"</p>
+                    <div class="tribute-footer">
+                        <span class="tribute-name">${data.name}</span>
+                        <span class="tribute-rel">${data.relation || ''}</span>
+                    </div>
+                `;
+                list.appendChild(card);
+            });
+            if (snapshot.empty) {
+                list.innerHTML = '<div class="empty-tribute"><p class="empty-msg">✍️ Be the first to share a memory of Fast Eddie.</p><p class="empty-sub">Your tribute will appear here in real time.</p></div>';
+            }
+        }, (error) => {
+            console.error('Firebase error:', error);
+            list.innerHTML = '<div class="empty-tribute"><p class="empty-msg">📡 Connecting to tribute wall...</p><p class="empty-sub">Guest book will be live once deployed. Try submitting a tribute!</p></div>';
+        });
+
+        // Scroll Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.scroll-fade, .family-grid, .la-card').forEach(el => observer.observe(el));
+
+        // Lightbox Logic
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.getElementById('lightbox-close');
+
+        document.querySelectorAll('.bento-item img, .floating-img').forEach(img => {
+            img.style.cursor = 'pointer';
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
